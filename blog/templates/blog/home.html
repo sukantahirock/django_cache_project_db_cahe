@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Blog Home</title></head>
+<body>
+    <h1>Latest Posts</h1>
+    {% for post in posts %}
+        <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+        <p>{{ post.content|truncatewords:20 }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
